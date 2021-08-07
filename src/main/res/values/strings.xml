@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Fast-Task</string>
+    <string name="button_view_tasks">VIEW TASKS</string>
+    <string name="button_add_tasks">ADD A TASK</string>
 </resources>
