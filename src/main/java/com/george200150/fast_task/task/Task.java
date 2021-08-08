@@ -23,6 +23,7 @@ public class Task {
     // list of check items in the to-do list
     @SerializedName("todos")
     private List<SubTask> todos;
+    private Location location;
 
     public Task() {
         todos = new ArrayList<>();
@@ -40,6 +41,8 @@ public class Task {
     public void setDuration(Duration duration) { this.duration = duration; }
     public List<SubTask> getTodos() { return todos; }
     public void setTodos(List<SubTask> todos) { this.todos = todos; }
+    public Location getLocation() { return location; }
+    public void setLocation(Location location) { this.location = location; }
 
     @Override
     public boolean equals(Object o) {
@@ -51,11 +54,12 @@ public class Task {
                 getRegistered().equals(task.getRegistered()) &&
                 getDeadline().equals(task.getDeadline()) &&
                 getDuration().equals(task.getDuration()) &&
-                getTodos().equals(task.getTodos());
+                getTodos().equals(task.getTodos()) &&
+                getLocation().equals(task.getLocation());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(isDone(), getPriority(), getRegistered(), getDeadline(), getDuration(), getTodos());
+        return Objects.hash(isDone(), getPriority(), getRegistered(), getDeadline(), getDuration(), getTodos(), getLocation());
     }
 }
