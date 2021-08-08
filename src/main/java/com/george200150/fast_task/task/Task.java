@@ -9,6 +9,8 @@ import java.util.List;
 import java.util.Objects;
 
 public class Task {
+    @SerializedName("id")
+    private String id;
     @SerializedName("done") // status of the task - done or not done
     private boolean done;
     @SerializedName("priority") // importance of task; the lower the number, the higher the priority
@@ -29,6 +31,8 @@ public class Task {
         todos = new ArrayList<>();
     }
 
+    public String getId() { return id; }
+    public void setId(String id) { this.id = id; }
     public boolean isDone() { return done; }
     public void setDone(boolean done) { this.done = done; }
     public int getPriority() { return priority; }
