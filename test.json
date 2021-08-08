@@ -3,24 +3,62 @@
     {
       "done": false,
       "priority": 0,
-      "registered": "2021-08-08 11:17:30.288",
-      "deadline": "2021-08-08 14:17:30.290",
+      "registered": "2021-08-08 13:58:12.365",
+      "deadline": "2021-08-08 16:58:12.368",
       "duration": {
         "seconds": 6000,
         "nanos": 0
       },
-      "todos": []
+      "todos": [],
+      "location": {
+        "name": "name",
+        "type": "type",
+        "coordinates": "N:0.0,E:0.0",
+        "workSchedule": {
+          "workingHoursMondayToFriday": {
+            "begin": "00:00",
+            "end": "23:59"
+          },
+          "workingHoursSaturday": {
+            "begin": "00:00",
+            "end": "23:59"
+          },
+          "workingHoursSunday": {
+            "begin": "00:00",
+            "end": "23:59"
+          }
+        }
+      }
     },
     {
       "done": true,
       "priority": 1,
-      "registered": "2021-08-08 11:17:30.291",
-      "deadline": "2021-08-15 11:17:30.291",
+      "registered": "2021-08-08 13:58:12.369",
+      "deadline": "2021-08-15 13:58:12.369",
       "duration": {
         "seconds": 120,
         "nanos": 10
       },
-      "todos": []
+      "todos": [],
+      "location": {
+        "name": "name",
+        "type": "type",
+        "coordinates": "N:0.0,E:0.0",
+        "workSchedule": {
+          "workingHoursMondayToFriday": {
+            "begin": "00:00",
+            "end": "23:59"
+          },
+          "workingHoursSaturday": {
+            "begin": "00:00",
+            "end": "23:59"
+          },
+          "workingHoursSunday": {
+            "begin": "00:00",
+            "end": "23:59"
+          }
+        }
+      }
     }
   ]
 }

@@ -2,6 +2,8 @@ package com.george200150.fast_task.task;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.Objects;
+
 public class WorkSchedule {
     @SerializedName("workingHoursMondayToFriday")
     private Interval workingHoursMondayToFriday;
@@ -22,4 +24,19 @@ public class WorkSchedule {
     public void setWorkingHoursSaturday(Interval workingHoursSaturday) { this.workingHoursSaturday = workingHoursSaturday; }
     public Interval getWorkingHoursSunday() { return workingHoursSunday; }
     public void setWorkingHoursSunday(Interval workingHoursSunday) { this.workingHoursSunday = workingHoursSunday; }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof WorkSchedule)) return false;
+        WorkSchedule that = (WorkSchedule) o;
+        return getWorkingHoursMondayToFriday().equals(that.getWorkingHoursMondayToFriday()) &&
+                getWorkingHoursSaturday().equals(that.getWorkingHoursSaturday()) &&
+                getWorkingHoursSunday().equals(that.getWorkingHoursSunday());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getWorkingHoursMondayToFriday(), getWorkingHoursSaturday(), getWorkingHoursSunday());
+    }
 }
