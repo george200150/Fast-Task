@@ -1,17 +1,15 @@
 package com.george200150.fast_task.parser;
 
+import com.george200150.fast_task.builders.GsonBuilder;
 import com.george200150.fast_task.exceptions.JsonFileNotFoundException;
 import com.george200150.fast_task.task.TodoList;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
-import com.google.gson.stream.JsonReader;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -33,7 +31,7 @@ public class JsonImporter {
     private static TodoList getTodoListFromJson(String jsonString) {
         if (parser == null) {
             parser = new JsonParser();
-            gson = new Gson();
+            gson = GsonBuilder.buildGson();
         }
         JsonElement mJson = parser.parse(jsonString);
         return gson.fromJson(mJson, TodoList.class);

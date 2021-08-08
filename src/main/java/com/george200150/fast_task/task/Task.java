@@ -3,6 +3,7 @@ package com.george200150.fast_task.task;
 import com.google.gson.annotations.SerializedName;
 
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
@@ -24,6 +25,7 @@ public class Task {
     private List<SubTask> todos;
 
     public Task() {
+        todos = new ArrayList<>();
     }
 
     public boolean isDone() { return done; }

@@ -1,1 +1,26 @@
-{"todoList":[{"done":false,"priority":0,"registered":"Aug 7, 2021 3:17:59 PM","deadline":"Aug 7, 2021 6:17:59 PM","duration":{"seconds":6000,"nanos":0}},{"done":true,"priority":1,"registered":"Aug 7, 2021 3:17:59 PM","deadline":"Aug 14, 2021 3:17:59 PM","duration":{"seconds":120,"nanos":10}}]}
+{
+  "todoList": [
+    {
+      "done": false,
+      "priority": 0,
+      "registered": "2021-08-08 11:17:30.288",
+      "deadline": "2021-08-08 14:17:30.290",
+      "duration": {
+        "seconds": 6000,
+        "nanos": 0
+      },
+      "todos": []
+    },
+    {
+      "done": true,
+      "priority": 1,
+      "registered": "2021-08-08 11:17:30.291",
+      "deadline": "2021-08-15 11:17:30.291",
+      "duration": {
+        "seconds": 120,
+        "nanos": 10
+      },
+      "todos": []
+    }
+  ]
+}

@@ -1,10 +1,8 @@
 package com.george200150.fast_task.builders;
 
-import com.george200150.fast_task.exceptions.JsonFormatException;
 import com.george200150.fast_task.task.Task;
-import com.google.gson.Gson;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonParser;
+
+import java.util.ArrayList;
 
 public class TaskBuilder {
 
@@ -18,7 +16,7 @@ public class TaskBuilder {
         task.setDeadline(null);
         task.setDuration(null);
 
-        task.setTodos(null);
+        task.setTodos(new ArrayList<>());
 
         return task;
     }
