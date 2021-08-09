@@ -12,6 +12,8 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.george200150.fast_task.R;
+import com.george200150.fast_task.builders.DateFormatBuilder;
+import com.george200150.fast_task.constants.DateFormatStrings;
 import com.george200150.fast_task.task.Interval;
 import com.george200150.fast_task.task.Location;
 import com.george200150.fast_task.task.Task;
@@ -34,13 +36,18 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.ViewHolder> 
 
         // TODO: only for testing purposes
         Task task1 = new Task();
+        task1.setId("x");
         task1.setRegistered(Date.from(Instant.now()));
         task1.setDuration(Duration.ofSeconds(6000, 0));
         task1.setDeadline(Date.from(Instant.now().plus(180, ChronoUnit.MINUTES)));
         Interval interval = new Interval("00:00", "23:59");
         WorkSchedule workSchedule = new WorkSchedule(interval, interval, interval);
-        Location location = new Location("name", "type", "N:0.0,E:0.0", workSchedule);
+        Location location = new Location("Hipermarket", "Auchan", "N:0.0,E:0.0", workSchedule);
         task1.setLocation(location);
+        tasks.add(task1);
+        task1.setId("y");
+        tasks.add(task1);
+        task1.setId("z");
         tasks.add(task1);
 
         clickListener = new View.OnClickListener() {
@@ -49,7 +56,7 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.ViewHolder> 
                 Task task = (Task) view.getTag();
                 Bundle bundle = new Bundle();
                 bundle.putString(TaskEditFragment.TASK_ID, task.getId());
-                Navigation.findNavController(view).navigate(R.id.fragment_task_edit, bundle);
+                Navigation.findNavController(view).navigate(R.id.fragment_subtask_list, bundle);
             }
         };
     }
@@ -65,6 +72,9 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.ViewHolder> 
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Task task = tasks.get(position);
         holder.location.setText(task.getLocation().toString());
+        holder.deadline.setText(DateFormatBuilder.getSDF(DateFormatStrings.displayDateFormat).format(task.getDeadline()));
+        holder.itemView.setTag(task);
+        holder.itemView.setOnClickListener(clickListener);
     }
 
     @Override
@@ -74,9 +84,11 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.ViewHolder> 
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView location;
+        private TextView deadline;
         public ViewHolder(@NonNull View taskView) {
             super(taskView);
             location = taskView.findViewById(R.id.text_location);
+            deadline = taskView.findViewById(R.id.text_deadline);
         }
     }
 }

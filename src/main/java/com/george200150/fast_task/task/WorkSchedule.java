@@ -2,6 +2,7 @@ package com.george200150.fast_task.task;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.Calendar;
 import java.util.Objects;
 
 public class WorkSchedule {
@@ -38,5 +39,17 @@ public class WorkSchedule {
     @Override
     public int hashCode() {
         return Objects.hash(getWorkingHoursMondayToFriday(), getWorkingHoursSaturday(), getWorkingHoursSunday());
+    }
+
+    public String getWorkingHoursForToday() {
+        Calendar calendar = Calendar.getInstance();
+        int day = calendar.get(Calendar.DAY_OF_WEEK);
+        if (day == Calendar.SUNDAY) {
+            return "D: " + workingHoursSunday;
+        } else if (day >= Calendar.MONDAY && day <= Calendar.FRIDAY) {
+            return "L-V: " + workingHoursMondayToFriday;
+        } else { // if (day == Calendar.SATURDAY) {
+            return "S: " + workingHoursSaturday;
+        }
     }
 }

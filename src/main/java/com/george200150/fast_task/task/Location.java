@@ -50,4 +50,9 @@ public class Location {
     public int hashCode() {
         return Objects.hash(getName(), getType(), getCoordinates(), getWorkSchedule());
     }
+
+    @Override
+    public String toString() {
+        return  type + ", " + name + "\nProgram: " + workSchedule.getWorkingHoursForToday();
+    }
 }

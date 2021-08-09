@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.tasks.TaskEditFragment">
+
+
+    <SeekBar
+        android:id="@+id/seek_edit_priority"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="107dp"
+        android:layout_height="26dp"
+        android:max="10"
+        android:progress="3"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="45dp" />
+
+
+    <CheckBox
+        android:id="@+id/check_edit_done"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CheckBox"
+        tools:layout_editor_absoluteX="58dp"
+        tools:layout_editor_absoluteY="73dp" />
+
+    <CalendarView
+        android:id="@+id/calendar_edit_deadline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="368dp" />
+
+    <TextView
+        android:id="@+id/text_edit_duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Duration"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <Button
+        android:id="@+id/button_edit_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Location"
+        tools:layout_editor_absoluteX="192dp"
+        tools:layout_editor_absoluteY="57dp" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

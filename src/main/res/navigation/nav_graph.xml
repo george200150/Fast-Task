@@ -19,20 +19,77 @@
         tools:layout="@layout/fragment_task_list">
 
         <action
-            android:id="@+id/action_TaskListFragment_to_TaskEditFragment"
-            app:destination="@id/fragment_task_edit"
+            android:id="@+id/action_TaskListFragment_to_SubTaskListFragment"
+            app:destination="@id/fragment_subtask_list"
+            app:popUpTo="@id/fragment_task_list"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_TaskListFragment_to_TaskMetaEditFragment"
+            app:destination="@id/fragment_task_meta_edit"
             app:popUpTo="@id/fragment_task_list"
             app:popUpToInclusive="true"/>
     </fragment>
 
     <fragment
-        android:id="@+id/fragment_task_edit"
-        android:name="com.george200150.fast_task.fragments.tasks.TaskEditFragment"
-        android:label="@string/task_edit_fragment_label"
-        tools:layout="@layout/fragment_task_edit">
+        android:id="@+id/fragment_subtask_list"
+        android:name="com.george200150.fast_task.fragments.subtasks.SubTaskListFragment"
+        android:label="@string/subtask_list_fragment_label"
+        tools:layout="@layout/fragment_subtask_list">
 
         <action
-            android:id="@+id/action_TaskEditFragment_to_TaskListFragment"
+            android:id="@+id/action_SubTaskListFragment_to_LocationEditFragment"
+            app:destination="@id/fragment_location_edit"
+            app:popUpTo="@id/fragment_subtask_list"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_SubTaskListFragment_to_SubTaskEditFragment"
+            app:destination="@id/fragment_subtask_edit"
+            app:popUpTo="@id/fragment_subtask_list"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_SubTaskListFragment_to_TaskListFragment"
+            app:destination="@id/fragment_task_list"
+            app:popUpTo="@id/fragment_task_list"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+
+
+    <fragment
+        android:id="@+id/fragment_subtask_edit"
+        android:name="com.george200150.fast_task.fragments.subtasks.SubTaskEditFragment"
+        android:label="@string/subtask_edit_fragment_label"
+        tools:layout="@layout/fragment_subtask_list">
+
+        <action
+            android:id="@+id/action_SubTaskEditFragment_to_TaskListFragment"
+            app:destination="@id/fragment_subtask_list"
+            app:popUpTo="@id/fragment_subtask_list"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/fragment_location_edit"
+        android:name="com.george200150.fast_task.fragments.LocationEditFragment"
+        android:label="@string/location_edit_fragment_label"
+        tools:layout="@layout/fragment_subtask_list">
+
+        <action
+            android:id="@+id/action_LocationEditFragment_to_SubTaskListFragment"
+            app:destination="@id/fragment_subtask_list"
+            app:popUpTo="@id/fragment_subtask_list"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_task_meta_edit"
+        android:name="com.george200150.fast_task.fragments.TaskMetaEditFragment"
+        android:label="@string/task_meta_edit_fragment_label"
+        tools:layout="@layout/fragment_task_meta_edit">
+
+        <action
+            android:id="@+id/action_TaskMetaEditFragment_to_TaskListFragment"
             app:destination="@id/fragment_task_list"
             app:popUpTo="@id/fragment_task_list"
             app:popUpToInclusive="true" />

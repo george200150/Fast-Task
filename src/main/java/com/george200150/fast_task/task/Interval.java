@@ -35,4 +35,10 @@ public class Interval {
     public int hashCode() {
         return Objects.hash(getBegin(), getEnd());
     }
+
+
+    @Override
+    public String toString() {
+        return begin + '-' + end;
+    }
 }
