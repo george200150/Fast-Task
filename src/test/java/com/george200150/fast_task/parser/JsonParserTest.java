@@ -1,10 +1,10 @@
 package com.george200150.fast_task.parser;
 
-import com.george200150.fast_task.task.Interval;
-import com.george200150.fast_task.task.Location;
-import com.george200150.fast_task.task.Task;
-import com.george200150.fast_task.task.TodoList;
-import com.george200150.fast_task.task.WorkSchedule;
+import com.george200150.fast_task.domain.Interval;
+import com.george200150.fast_task.domain.Location;
+import com.george200150.fast_task.domain.Task;
+import com.george200150.fast_task.domain.TodoList;
+import com.george200150.fast_task.domain.WorkSchedule;
 
 import org.junit.Test;
 

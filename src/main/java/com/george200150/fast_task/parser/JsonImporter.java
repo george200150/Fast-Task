@@ -2,7 +2,7 @@ package com.george200150.fast_task.parser;
 
 import com.george200150.fast_task.builders.GsonBuilder;
 import com.george200150.fast_task.exceptions.JsonFileNotFoundException;
-import com.george200150.fast_task.task.TodoList;
+import com.george200150.fast_task.domain.TodoList;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;

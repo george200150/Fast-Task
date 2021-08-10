@@ -1,4 +1,4 @@
-package com.george200150.fast_task.task;
+package com.george200150.fast_task.domain;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -53,8 +53,7 @@ public class Task {
         if (this == o) return true;
         if (!(o instanceof Task)) return false;
         Task task = (Task) o;
-        return isDone() == task.isDone() &&
-                getPriority() == task.getPriority() &&
+        return getPriority() == task.getPriority() &&
                 getRegistered().equals(task.getRegistered()) &&
                 getDeadline().equals(task.getDeadline()) &&
                 getDuration().equals(task.getDuration()) &&

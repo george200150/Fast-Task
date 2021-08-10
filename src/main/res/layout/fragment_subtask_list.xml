@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.tasks.TaskEditFragment">
+    tools:context=".fragments.subtasks.SubTaskListFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/list_edit_subtasks"
+        android:id="@+id/subtask_list"
         android:layout_width="match_parent"
         android:layout_height="600dp"
         app:layout_constraintBottom_toTopOf="@+id/button_edit_location"

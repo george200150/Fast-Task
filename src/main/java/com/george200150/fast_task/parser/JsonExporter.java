@@ -2,7 +2,7 @@ package com.george200150.fast_task.parser;
 
 import com.george200150.fast_task.builders.GsonBuilder;
 import com.george200150.fast_task.exceptions.JsonFormatException;
-import com.george200150.fast_task.task.TodoList;
+import com.george200150.fast_task.domain.TodoList;
 import com.google.gson.Gson;
 
 import java.io.FileWriter;

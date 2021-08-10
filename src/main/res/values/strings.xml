@@ -16,4 +16,6 @@
     <string name="location_edit_fragment_label">Location Edit</string>
     <string name="subtask_edit_fragment_label">SubTask Edit</string>
     <string name="subtask_list_fragment_label">SubTask List</string>
+    <string name="description">description</string>
+    <string name="delete_subtask">DELETE SUBTASK</string>
 </resources>

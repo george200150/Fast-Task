@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.tasks.TaskEditFragment">
+    tools:context=".fragments.tasks.TaskMetaEditFragment">
 
 
     <SeekBar
@@ -14,40 +14,44 @@
         android:layout_height="26dp"
         android:max="10"
         android:progress="3"
-        tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="45dp" />
+        app:layout_constraintBottom_toTopOf="@+id/check_edit_done"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
     <CheckBox
         android:id="@+id/check_edit_done"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="263dp"
         android:text="CheckBox"
-        tools:layout_editor_absoluteX="58dp"
-        tools:layout_editor_absoluteY="73dp" />
+        app:layout_constraintBottom_toTopOf="@+id/calendar_edit_deadline"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <CalendarView
         android:id="@+id/calendar_edit_deadline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="368dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/text_edit_duration"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Duration"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="16dp" />
+        app:layout_constraintBottom_toTopOf="@+id/seek_edit_priority"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button_edit_location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Location"
-        tools:layout_editor_absoluteX="192dp"
-        tools:layout_editor_absoluteY="57dp" />
+        app:layout_constraintBottom_toTopOf="@+id/calendar_edit_deadline"
+        app:layout_constraintStart_toEndOf="@+id/check_edit_done"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 

@@ -1,4 +1,4 @@
-package com.george200150.fast_task.task;
+package com.george200150.fast_task.domain;
 
 import com.google.gson.annotations.SerializedName;
 
