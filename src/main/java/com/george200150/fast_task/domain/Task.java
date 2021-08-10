@@ -1,4 +1,4 @@
-package com.george200150.fast_task.task;
+package com.george200150.fast_task.domain;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -9,6 +9,8 @@ import java.util.List;
 import java.util.Objects;
 
 public class Task {
+    @SerializedName("id")
+    private String id;
     @SerializedName("done") // status of the task - done or not done
     private boolean done;
     @SerializedName("priority") // importance of task; the lower the number, the higher the priority
@@ -29,6 +31,8 @@ public class Task {
         todos = new ArrayList<>();
     }
 
+    public String getId() { return id; }
+    public void setId(String id) { this.id = id; }
     public boolean isDone() { return done; }
     public void setDone(boolean done) { this.done = done; }
     public int getPriority() { return priority; }
@@ -49,8 +53,7 @@ public class Task {
         if (this == o) return true;
         if (!(o instanceof Task)) return false;
         Task task = (Task) o;
-        return isDone() == task.isDone() &&
-                getPriority() == task.getPriority() &&
+        return getPriority() == task.getPriority() &&
                 getRegistered().equals(task.getRegistered()) &&
                 getDeadline().equals(task.getDeadline()) &&
                 getDuration().equals(task.getDuration()) &&

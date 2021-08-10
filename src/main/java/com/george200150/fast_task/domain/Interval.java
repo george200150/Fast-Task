@@ -1,4 +1,4 @@
-package com.george200150.fast_task.task;
+package com.george200150.fast_task.domain;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -34,5 +34,11 @@ public class Interval {
     @Override
     public int hashCode() {
         return Objects.hash(getBegin(), getEnd());
+    }
+
+
+    @Override
+    public String toString() {
+        return begin + '-' + end;
     }
 }

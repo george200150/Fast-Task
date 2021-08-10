@@ -1,6 +1,6 @@
 package com.george200150.fast_task.builders;
 
-import com.george200150.fast_task.task.Task;
+import com.george200150.fast_task.domain.Task;
 
 import java.util.ArrayList;
 

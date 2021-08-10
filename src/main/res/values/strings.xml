@@ -3,4 +3,19 @@
     <string name="button_view_tasks">VIEW TASKS</string>
     <string name="button_add_tasks">ADD A TASK</string>
     <string name="main">Choose an Option</string>
+    <string name="done">DONE</string>
+    <string name="location">location</string>
+    <string name="deadline">deadline</string>
+    <string name="button_delete_task">button_delete_task</string>
+    <string name="delete_task">DELETE TASK</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="task_list_fragment_label">Task List Fragment</string>
+    <string name="task_edit_fragment_label">Task Edit Fragment</string>
+    <string name="task_meta_edit_fragment_label">Task Meta Edit</string>
+    <string name="location_edit_fragment_label">Location Edit</string>
+    <string name="subtask_edit_fragment_label">SubTask Edit</string>
+    <string name="subtask_list_fragment_label">SubTask List</string>
+    <string name="description">description</string>
+    <string name="delete_subtask">DELETE SUBTASK</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.george200150.fast_task.task;
+package com.george200150.fast_task.domain;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -49,5 +49,10 @@ public class Location {
     @Override
     public int hashCode() {
         return Objects.hash(getName(), getType(), getCoordinates(), getWorkSchedule());
+    }
+
+    @Override
+    public String toString() {
+        return  type + ", " + name + "\nProgram: " + workSchedule.getWorkingHoursForToday();
     }
 }

@@ -2,7 +2,7 @@ package com.george200150.fast_task.builders;
 
 import com.google.gson.Gson;
 
-import static com.george200150.fast_task.constants.DateFormat.stringDateFormat;
+import static com.george200150.fast_task.constants.DateFormatStrings.stringDateFormat;
 
 public class GsonBuilder {
     public static Gson buildGson() {
