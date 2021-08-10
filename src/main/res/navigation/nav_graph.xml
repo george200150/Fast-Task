@@ -83,9 +83,9 @@
         tools:layout="@layout/fragment_task_meta_edit">
 
         <action
-            android:id="@+id/action_TaskMetaEditFragment_to_TaskListFragment"
-            app:destination="@id/fragment_task_list"
-            app:popUpTo="@id/fragment_task_list"
+            android:id="@+id/action_TaskMetaEditFragment_to_SubTaskListFragment"
+            app:destination="@id/fragment_subtask_list"
+            app:popUpTo="@id/fragment_subtask_list"
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_TaskMetaEditFragment_to_LocationEditFragment"

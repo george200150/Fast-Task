@@ -24,12 +24,9 @@ public class MainFragment extends Fragment {
         buttonViewTasks = (Button) view.findViewById(R.id.button_view_tasks);
         buttonAddTask = (Button) view.findViewById(R.id.button_add_task);
 
-        buttonViewTasks.setOnClickListener(x ->
-        {
+        buttonViewTasks.setOnClickListener(x -> {
             Log.d("YOUR TAG", "George!");
             Navigation.findNavController(view).navigate(R.id.fragment_task_list);
-        }
-
-        );
+        });
     }
 }
