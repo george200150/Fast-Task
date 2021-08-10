@@ -11,7 +11,7 @@ import com.george200150.fast_task.R;
 public class SubTaskEditFragment extends Fragment {
 
     public SubTaskEditFragment() {
-        super(R.layout.fragment_main);
+        super(R.layout.fragment_subtask_edit);
     }
 
     @Override

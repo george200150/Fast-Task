@@ -11,7 +11,6 @@
         android:label="@string/main"
         tools:layout="@layout/fragment_main" />
 
-    <!--  TODO: add more fragments and the order they are accessed in here  -->
     <fragment
         android:id="@+id/fragment_task_list"
         android:name="com.george200150.fast_task.fragments.tasks.TaskListFragment"
@@ -46,11 +45,11 @@
             app:destination="@id/fragment_subtask_edit"
             app:popUpTo="@id/fragment_subtask_list"
             app:popUpToInclusive="true" />
-        <action
-            android:id="@+id/action_SubTaskListFragment_to_TaskListFragment"
-            app:destination="@id/fragment_task_list"
-            app:popUpTo="@id/fragment_task_list"
-            app:popUpToInclusive="true" />
+<!--        <action-->
+<!--            android:id="@+id/action_SubTaskListFragment_to_TaskListFragment"-->
+<!--            app:destination="@id/fragment_task_list"-->
+<!--            app:popUpTo="@id/fragment_subtask_list"-->
+<!--            app:popUpToInclusive="true" />-->
     </fragment>
 
 
@@ -84,7 +83,7 @@
 
     <fragment
         android:id="@+id/fragment_task_meta_edit"
-        android:name="com.george200150.fast_task.fragments.TaskMetaEditFragment"
+        android:name="com.george200150.fast_task.fragments.tasks.TaskMetaEditFragment"
         android:label="@string/task_meta_edit_fragment_label"
         tools:layout="@layout/fragment_task_meta_edit">
 
