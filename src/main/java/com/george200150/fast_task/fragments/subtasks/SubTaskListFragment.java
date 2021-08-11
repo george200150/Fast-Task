@@ -1,6 +1,7 @@
 package com.george200150.fast_task.fragments.subtasks;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,14 +15,18 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.george200150.fast_task.R;
-import com.george200150.fast_task.domain.SubTask;
+import com.george200150.fast_task.domain.Task;
 
 public class SubTaskListFragment extends Fragment {
     private SubTasksAdapter subTasksAdapter;
     private RecyclerView subTaskView;
     private Button edit_meta_button;
     // TODO: add viewModel
+    public static Task selectedTask;
 
+    public static void setSelectedTask(Task task) {
+        selectedTask = task;
+    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -51,7 +56,7 @@ public class SubTaskListFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        subTasksAdapter = new SubTasksAdapter(this);
+        subTasksAdapter = new SubTasksAdapter(this, selectedTask);
         subTaskView.setLayoutManager(new LinearLayoutManager(this.getContext())); // additional line
         subTaskView.setAdapter(subTasksAdapter);
     }

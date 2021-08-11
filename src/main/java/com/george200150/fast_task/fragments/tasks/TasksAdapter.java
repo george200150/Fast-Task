@@ -13,11 +13,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.george200150.fast_task.R;
 import com.george200150.fast_task.builders.DateFormatBuilder;
+import com.george200150.fast_task.builders.GsonBuilder;
 import com.george200150.fast_task.constants.DateFormatStrings;
 import com.george200150.fast_task.domain.Interval;
 import com.george200150.fast_task.domain.Location;
+import com.george200150.fast_task.domain.SubTask;
 import com.george200150.fast_task.domain.Task;
 import com.george200150.fast_task.domain.WorkSchedule;
+import com.george200150.fast_task.fragments.subtasks.SubTaskListFragment;
 
 import java.time.Duration;
 import java.time.Instant;
@@ -45,6 +48,11 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.ViewHolder> 
         Location location = new Location("Hipermarket", "Auchan", "N:0.0,E:0.0", workSchedule);
         task1.setLocation(location);
         tasks.add(task1);
+        List<SubTask> todos = task1.getTodos();
+        todos.add(new SubTask("Buy 1 can of soda", false));
+        todos.add(new SubTask("Buy some flowers", false));
+        todos.add(new SubTask("Buy a watermelon", false));
+        task1.setTodos(todos);
         task1.setId("y");
         tasks.add(task1);
         task1.setId("z");
@@ -54,9 +62,11 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.ViewHolder> 
             @Override
             public void onClick(View view) {
                 Task task = (Task) view.getTag();
-                Bundle bundle = new Bundle();
-                bundle.putString(TaskEditFragment.TASK_ID, task.getId());
-                Navigation.findNavController(view).navigate(R.id.fragment_subtask_list, bundle);
+                // passing bundle from fragment to fragment requires creating a new fragment just for that
+                // decided to create a static method in the destination fragment instead
+                SubTaskListFragment.setSelectedTask(task);
+                // TODO: could potentially create bugs when editing the task and coming back to this fragment
+                Navigation.findNavController(view).navigate(R.id.fragment_subtask_list);
             }
         };
     }

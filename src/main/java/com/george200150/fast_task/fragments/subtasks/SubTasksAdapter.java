@@ -24,13 +24,8 @@ public class SubTasksAdapter extends RecyclerView.Adapter<SubTasksAdapter.ViewHo
     private List<SubTask> subTasks = new ArrayList<>();
     private View.OnClickListener clickListener;
 
-    public SubTasksAdapter(Fragment fragment) {
-
-        // TODO: only for testing purposes
-        SubTask subTask1 = new SubTask("description", false);
-        subTasks.add(subTask1);
-        subTasks.add(subTask1);
-        subTasks.add(subTask1);
+    public SubTasksAdapter(Fragment fragment, Task selectedTask) {
+        subTasks.addAll(selectedTask.getTodos());
 
         clickListener = new View.OnClickListener() {
             @Override
