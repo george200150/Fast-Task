@@ -1,11 +1,11 @@
 package com.george200150.fast_task.fragments.subtasks;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,7 +20,8 @@ import com.george200150.fast_task.domain.Task;
 public class SubTaskListFragment extends Fragment {
     private SubTasksAdapter subTasksAdapter;
     private RecyclerView subTaskView;
-    private Button edit_meta_button;
+    private Button editMetaButton;
+    private TextView textViewMetadata;
     // TODO: add viewModel
     public static Task selectedTask;
 
@@ -43,9 +44,17 @@ public class SubTaskListFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         subTaskView = view.findViewById(R.id.subtask_list);
-        edit_meta_button = view.findViewById(R.id.button_edit_metadata);
+        editMetaButton = view.findViewById(R.id.button_edit_metadata);
+        textViewMetadata = view.findViewById(R.id.textView_metadata);
 
-        edit_meta_button.setOnClickListener(new View.OnClickListener() {
+        textViewMetadata.setText("PRIORITY: " + selectedTask.getPriority() +
+                selectedTask.getRegistered() +
+                selectedTask.getDeadline() +
+                selectedTask.getDuration() +
+                selectedTask.getLocation());
+
+
+        editMetaButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Navigation.findNavController(view).navigate(R.id.fragment_task_meta_edit);

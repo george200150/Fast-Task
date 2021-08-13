@@ -31,9 +31,8 @@ public class SubTasksAdapter extends RecyclerView.Adapter<SubTasksAdapter.ViewHo
             @Override
             public void onClick(View view) {
                 SubTask subTask = (SubTask) view.getTag();
-                Bundle bundle = new Bundle();
-                bundle.putString(SubTaskEditFragment.SUBTASK_ID, subTask.getDescription());
-                Navigation.findNavController(view).navigate(R.id.fragment_subtask_edit, bundle);
+                SubTaskEditFragment.setSelectedSubTask(subTask);
+                Navigation.findNavController(view).navigate(R.id.fragment_subtask_edit);
             }
         };
     }
