@@ -53,7 +53,7 @@
         android:id="@+id/fragment_subtask_edit"
         android:name="com.george200150.fast_task.fragments.subtasks.SubTaskEditFragment"
         android:label="@string/subtask_edit_fragment_label"
-        tools:layout="@layout/fragment_subtask_list">
+        tools:layout="@layout/fragment_subtask_edit">
 
         <action
             android:id="@+id/action_SubTaskEditFragment_to_TaskListFragment"
@@ -67,11 +67,16 @@
         android:id="@+id/fragment_location_edit"
         android:name="com.george200150.fast_task.fragments.LocationEditFragment"
         android:label="@string/location_edit_fragment_label"
-        tools:layout="@layout/fragment_subtask_list">
+        tools:layout="@layout/fragment_location_edit">
 
         <action
             android:id="@+id/action_LocationEditFragment_to_TaskMetaEditFragment"
             app:destination="@id/fragment_task_meta_edit"
+            app:popUpTo="@id/fragment_task_meta_edit"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_LocationEditFragment_to_IntervalEditFragment"
+            app:destination="@id/fragment_interval_edit"
             app:popUpTo="@id/fragment_task_meta_edit"
             app:popUpToInclusive="true" />
     </fragment>
@@ -93,5 +98,22 @@
             app:popUpTo="@id/fragment_task_meta_edit"
             app:popUpToInclusive="true" />
     </fragment>
+
+
+
+    <fragment
+        android:id="@+id/fragment_interval_edit"
+        android:name="com.george200150.fast_task.fragments.intervals.IntervalEditFragment"
+        android:label="@string/interval_edit_fragment_label"
+        tools:layout="@layout/fragment_interval_edit">
+
+        <action
+            android:id="@+id/action_IntervalEditFragment_to_LocationEditFragment"
+            app:destination="@id/fragment_location_edit"
+            app:popUpTo="@id/fragment_location_edit"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+<!--    TODO: somebody plase tell me what popupto and destination actually are -->
 
 </navigation>

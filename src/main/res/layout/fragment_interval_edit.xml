@@ -10,13 +10,19 @@
         android:id="@+id/interval_edit_textview_days"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="DAYS"
-        app:layout_constraintBottom_toTopOf="@+id/interval_edit_timepicker"
+        android:text="BEGIN"
+        app:layout_constraintBottom_toTopOf="@+id/interval_edit_timepicker_begin"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.514"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.754" />
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/interval_edit_textview_days2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="END"
+        app:layout_constraintBottom_toTopOf="@+id/interval_edit_timepicker_end"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button_update_interval"
@@ -29,10 +35,19 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TimePicker
-        android:id="@+id/interval_edit_timepicker"
+        android:id="@+id/interval_edit_timepicker_begin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="140dp"
+        android:layout_marginBottom="32dp"
+        android:timePickerMode="spinner"
+        app:layout_constraintBottom_toTopOf="@+id/interval_edit_textview_days2"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TimePicker
+        android:id="@+id/interval_edit_timepicker_end"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
         android:timePickerMode="spinner"
         app:layout_constraintBottom_toTopOf="@+id/button_update_interval"
         app:layout_constraintStart_toStartOf="parent" />

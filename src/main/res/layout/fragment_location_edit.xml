@@ -6,17 +6,6 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 tools:context=".fragments.LocationEditFragment">
 
-<!--    TODO:
-    private String name;
-    private String type;
-    private String coordinates;
-    private WorkSchedule workSchedule;
-
-    private Interval workingHoursMondayToFriday;
-    private Interval workingHoursSaturday;
-    private Interval workingHoursSunday;
--->
-
     <EditText
         android:id="@+id/location_edit_editText_name"
         android:layout_width="wrap_content"

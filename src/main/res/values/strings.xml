@@ -18,4 +18,5 @@
     <string name="subtask_list_fragment_label">SubTask List</string>
     <string name="description">description</string>
     <string name="delete_subtask">DELETE SUBTASK</string>
+    <string name="interval_edit_fragment_label">Interval Edit Fragment</string>
 </resources>

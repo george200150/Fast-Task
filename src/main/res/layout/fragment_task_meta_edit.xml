@@ -7,59 +7,93 @@
     tools:context=".fragments.tasks.TaskMetaEditFragment">
 
 
+    <EditText
+        android:id="@+id/task_meta_edit_edittext_duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="44dp"
+        android:paddingHorizontal="15dp"
+        android:inputType="time"
+        android:text="00:00"
+        app:layout_constraintBottom_toTopOf="@+id/button_update_metadata"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <SeekBar
         android:id="@+id/seek_edit_priority"
         style="@style/Widget.AppCompat.SeekBar.Discrete"
         android:layout_width="107dp"
         android:layout_height="26dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginBottom="4dp"
         android:max="10"
-        android:progress="3"
+        android:progress="5"
         app:layout_constraintBottom_toTopOf="@+id/check_edit_done"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/text_edit_duration"
+        android:id="@+id/text_edit_priority"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:text="Duration"
+        android:text="Priority: 5"
         app:layout_constraintBottom_toTopOf="@+id/seek_edit_priority"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.804" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/text_edit_duration2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Duration"
+        app:layout_constraintBottom_toTopOf="@+id/task_meta_edit_edittext_duration"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <CheckBox
         android:id="@+id/check_edit_done"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginBottom="172dp"
-        android:text="CheckBox"
-        app:layout_constraintBottom_toTopOf="@+id/calendar_edit_deadline"
+        android:text="Done"
+        app:layout_constraintBottom_toTopOf="@+id/button_edit_metadata"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <CalendarView
-        android:id="@+id/calendar_edit_deadline"
-        android:layout_width="312dp"
-        android:layout_height="297dp"
-        android:layout_marginBottom="48dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <Button
+        android:id="@+id/task_meta_edit_button_edit_registered"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CREATED: 2021-08-18 22:40:44.291"
+        app:layout_constraintBottom_toTopOf="@+id/task_meta_edit_button_edit_deadline"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/task_meta_edit_button_edit_deadline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DEADLINE: 2021-08-11 22:40:44.291"
+        app:layout_constraintBottom_toTopOf="@+id/text_edit_duration2"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button_edit_metadata"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:text="Location"
-        app:layout_constraintBottom_toTopOf="@+id/calendar_edit_deadline"
-        app:layout_constraintStart_toEndOf="@+id/check_edit_done"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.778" />
+        android:text="LOCATION:\n\n
+        type + ', ' + name + '\nProgram: ' + workSchedule.getWorkingHoursForToday()"
+        app:layout_constraintBottom_toTopOf="@+id/task_meta_edit_button_edit_registered"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button_update_metadata"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="Update Metadata"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

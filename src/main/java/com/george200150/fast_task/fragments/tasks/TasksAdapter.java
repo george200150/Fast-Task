@@ -1,6 +1,5 @@
 package com.george200150.fast_task.fragments.tasks;
 
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.george200150.fast_task.R;
 import com.george200150.fast_task.builders.DateFormatBuilder;
-import com.george200150.fast_task.builders.GsonBuilder;
 import com.george200150.fast_task.constants.DateFormatStrings;
 import com.george200150.fast_task.domain.Interval;
 import com.george200150.fast_task.domain.Location;
@@ -45,7 +43,9 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.ViewHolder> 
         task1.setDeadline(Date.from(Instant.now().plus(180, ChronoUnit.MINUTES)));
         Interval interval = new Interval("00:00", "23:59");
         WorkSchedule workSchedule = new WorkSchedule(interval, interval, interval);
-        Location location = new Location("Hipermarket", "Auchan", "N:0.0,E:0.0", workSchedule);
+        Location location = new Location("Auchan", "Hipermarket", "N:0.0,E:0.0", workSchedule);
+        // TODO: Create three separated different tasks for better testing edge cases
+        //  (create other locations with different work schedules, different task priorities, subtasks etc.)
         task1.setLocation(location);
         tasks.add(task1);
         List<SubTask> todos = task1.getTodos();

@@ -75,6 +75,7 @@ public class SubTaskListFragment extends Fragment {
         subTaskView.setAdapter(subTasksAdapter);
     }
 
+    // TODO: put it in its right place
     public static String formatDuration(Duration duration) {
         long seconds = duration.getSeconds();
         long absSeconds = Math.abs(seconds);

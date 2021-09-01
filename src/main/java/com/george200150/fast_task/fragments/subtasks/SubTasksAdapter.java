@@ -1,6 +1,5 @@
 package com.george200150.fast_task.fragments.subtasks;
 
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,13 +11,8 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.george200150.fast_task.R;
-import com.george200150.fast_task.builders.DateFormatBuilder;
-import com.george200150.fast_task.constants.DateFormatStrings;
-import com.george200150.fast_task.domain.Location;
 import com.george200150.fast_task.domain.SubTask;
 import com.george200150.fast_task.domain.Task;
-import com.george200150.fast_task.fragments.LocationEditFragment;
-import com.george200150.fast_task.fragments.tasks.TaskMetaEditFragment;
 
 import java.util.ArrayList;
 import java.util.List;
