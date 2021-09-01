@@ -41,7 +41,7 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.ViewHolder> 
         Task task1 = new Task();
         task1.setId("x");
         task1.setRegistered(Date.from(Instant.now()));
-        task1.setDuration(Duration.ofSeconds(6000, 0));
+        task1.setDuration(Duration.ofSeconds(546060, 0));
         task1.setDeadline(Date.from(Instant.now().plus(180, ChronoUnit.MINUTES)));
         Interval interval = new Interval("00:00", "23:59");
         WorkSchedule workSchedule = new WorkSchedule(interval, interval, interval);

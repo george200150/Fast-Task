@@ -15,7 +15,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.george200150.fast_task.R;
+import com.george200150.fast_task.builders.DateFormatBuilder;
+import com.george200150.fast_task.constants.DateFormatStrings;
 import com.george200150.fast_task.domain.Task;
+import com.george200150.fast_task.fragments.tasks.TaskMetaEditFragment;
+
+import java.time.Duration;
 
 public class SubTaskListFragment extends Fragment {
     private SubTasksAdapter subTasksAdapter;
@@ -47,16 +52,16 @@ public class SubTaskListFragment extends Fragment {
         editMetaButton = view.findViewById(R.id.button_edit_metadata);
         textViewMetadata = view.findViewById(R.id.textView_metadata);
 
-        textViewMetadata.setText("PRIORITY: " + selectedTask.getPriority() +
-                selectedTask.getRegistered() +
-                selectedTask.getDeadline() +
-                selectedTask.getDuration() +
-                selectedTask.getLocation());
-
+        textViewMetadata.setText("PRIORITY: " + selectedTask.getPriority() + "\n" +
+                "CREATED: " + DateFormatBuilder.getSDF(DateFormatStrings.displayDateFormat).format(selectedTask.getRegistered()) + "\n" +
+                "DEADLINE: " + DateFormatBuilder.getSDF(DateFormatStrings.displayDateFormat).format(selectedTask.getDeadline()) + "\n" +
+                "DURATION: " + formatDuration(selectedTask.getDuration()) + "\n" +
+                "LOCATION: " + selectedTask.getLocation());
 
         editMetaButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                TaskMetaEditFragment.setTask(selectedTask);
                 Navigation.findNavController(view).navigate(R.id.fragment_task_meta_edit);
             }
         });
@@ -68,5 +73,16 @@ public class SubTaskListFragment extends Fragment {
         subTasksAdapter = new SubTasksAdapter(this, selectedTask);
         subTaskView.setLayoutManager(new LinearLayoutManager(this.getContext())); // additional line
         subTaskView.setAdapter(subTasksAdapter);
+    }
+
+    public static String formatDuration(Duration duration) {
+        long seconds = duration.getSeconds();
+        long absSeconds = Math.abs(seconds);
+        String positive = String.format(
+                "%d:%02d:%02d",
+                absSeconds / 3600,
+                (absSeconds % 3600) / 60,
+                absSeconds % 60);
+        return seconds < 0 ? "-" + positive : positive;
     }
 }

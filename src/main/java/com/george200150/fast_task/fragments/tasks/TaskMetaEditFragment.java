@@ -9,12 +9,19 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
 import com.george200150.fast_task.R;
+import com.george200150.fast_task.domain.Task;
+import com.george200150.fast_task.fragments.LocationEditFragment;
 
 public class TaskMetaEditFragment extends Fragment {
     private Button edit_location_button;
+    private static Task selectedTask;
 
     public TaskMetaEditFragment() {
         super(R.layout.fragment_task_meta_edit);
+    }
+
+    public static void setTask(Task task){
+        selectedTask = task;
     }
 
     @Override
@@ -24,6 +31,7 @@ public class TaskMetaEditFragment extends Fragment {
         edit_location_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                LocationEditFragment.setSelectedLocation(selectedTask.getLocation());
                 Navigation.findNavController(view).navigate(R.id.fragment_location_edit);
             }
         });
