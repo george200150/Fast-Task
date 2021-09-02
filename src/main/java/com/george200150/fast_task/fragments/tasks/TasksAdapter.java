@@ -39,24 +39,56 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.ViewHolder> 
         Task task1 = new Task();
         task1.setId("x");
         task1.setRegistered(Date.from(Instant.now()));
-        task1.setDuration(Duration.ofSeconds(546060, 0));
-        task1.setDeadline(Date.from(Instant.now().plus(180, ChronoUnit.MINUTES)));
-        Interval interval = new Interval("00:00", "23:59");
-        WorkSchedule workSchedule = new WorkSchedule(interval, interval, interval);
-        Location location = new Location("Auchan", "Hipermarket", "N:0.0,E:0.0", workSchedule);
-        // TODO: Create three separated different tasks for better testing edge cases
-        //  (create other locations with different work schedules, different task priorities, subtasks etc.)
-        task1.setLocation(location);
+        task1.setDuration(Duration.ofSeconds(120, 0));
+        task1.setDeadline(Date.from(Instant.now()));
+        Interval interval1 = new Interval("00:00", "23:59");
+        WorkSchedule workSchedule1 = new WorkSchedule(interval1, interval1, interval1);
+        Location location1 = new Location("Profi", "Market", "N:0.0,E:0.0", workSchedule1);
+        task1.setLocation(location1);
+        task1.setPriority(0);
+        List<SubTask> todos1 = task1.getTodos();
+        todos1.add(new SubTask("Buy 1 can of soda", false));
+        todos1.add(new SubTask("Buy 2 bottles of water", false));
+        todos1.add(new SubTask("Buy some flowers for Ann", false));
+        task1.setTodos(todos1);
         tasks.add(task1);
-        List<SubTask> todos = task1.getTodos();
-        todos.add(new SubTask("Buy 1 can of soda", false));
-        todos.add(new SubTask("Buy some flowers", false));
-        todos.add(new SubTask("Buy a watermelon", false));
-        task1.setTodos(todos);
-        task1.setId("y");
-        tasks.add(task1);
-        task1.setId("z");
-        tasks.add(task1);
+
+
+        Task task2 = new Task();
+        task2.setId("y");
+        task2.setRegistered(Date.from(Instant.now()));
+        task2.setDuration(Duration.ofSeconds(140, 0));
+        task2.setDeadline(Date.from(Instant.now().plus(180, ChronoUnit.MINUTES)));
+        Interval interval21 = new Interval("08:00", "20:00");
+        Interval interval22 = new Interval("08:00", "16:00");
+        Interval interval23 = new Interval("10:00", "14:00");
+        WorkSchedule workSchedule2 = new WorkSchedule(interval21, interval22, interval23);
+        Location location2 = new Location("Intersport", "Store", "N:23.45,E:0.0", workSchedule2);
+        task2.setLocation(location2);
+        task2.setPriority(2);
+        task2.setDone(true);
+        List<SubTask> todos2 = task2.getTodos();
+        todos2.add(new SubTask("Purchase 1 pair of sneakers", true));
+        todos2.add(new SubTask("Purchase a t-shirt", true));
+        task2.setTodos(todos2);
+        tasks.add(task2);
+
+        Task task3 = new Task();
+        task3.setId("z");
+        task3.setRegistered(Date.from(Instant.now()));
+        task3.setDuration(Duration.ofSeconds(1400, 0));
+        task3.setDeadline(Date.from(Instant.now().plus(360, ChronoUnit.MINUTES)));
+        Interval interval3 = new Interval("00:00", "00:00");
+        WorkSchedule workSchedule3 = new WorkSchedule(interval3, interval3, interval3);
+        Location location3 = new Location("Home", "Flat", "N:0.0,E:33.67", workSchedule3);
+        task3.setLocation(location3);
+        task3.setPriority(5);
+        List<SubTask> todos3 = task3.getTodos();
+        todos3.add(new SubTask("Say to Ann Happy Birthday!", false));
+        task3.setTodos(todos3);
+        tasks.add(task3);
+
+
 
         clickListener = new View.OnClickListener() {
             @Override
@@ -97,8 +129,8 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.ViewHolder> 
         private TextView deadline;
         public ViewHolder(@NonNull View taskView) {
             super(taskView);
-            location = taskView.findViewById(R.id.text_location);
-            deadline = taskView.findViewById(R.id.text_deadline);
+            location = taskView.findViewById(R.id.view_task_textView_location);
+            deadline = taskView.findViewById(R.id.view_task_textView_deadline);
         }
     }
 }

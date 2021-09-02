@@ -14,7 +14,7 @@ import com.george200150.fast_task.R;
 
 public class TaskListFragment extends Fragment {
     private TasksAdapter tasksAdapter;
-    private RecyclerView taskView;
+    private RecyclerView taskListRecyclerView;
     // TODO: add viewModel
 
     @Override
@@ -31,13 +31,13 @@ public class TaskListFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        taskView = view.findViewById(R.id.task_list);
+        taskListRecyclerView = view.findViewById(R.id.task_list_recyclerView);
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         tasksAdapter = new TasksAdapter(this);
-        taskView.setAdapter(tasksAdapter);
+        taskListRecyclerView.setAdapter(tasksAdapter);
     }
 }

@@ -4,5 +4,5 @@ public class DateFormatStrings {
     public static String stringDateFormat = "yyyy-MM-dd HH:mm:ss.SSS";
     public static String displayDateFormat = "HH:mm / dd MMM";
     public static String hourMinuteDigitalFormat = "%02d:%02d";
-
+    public static String hourMinuteSecondDigitalFormat = "%d:%02d:%02d";
 }

@@ -7,7 +7,7 @@
     tools:context=".fragments.intervals.IntervalEditFragment">
 
     <TextView
-        android:id="@+id/interval_edit_textview_days"
+        android:id="@+id/interval_edit_textView_days"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="BEGIN"
@@ -15,8 +15,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <TimePicker
+        android:id="@+id/interval_edit_timepicker_begin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:timePickerMode="spinner"
+        app:layout_constraintBottom_toTopOf="@+id/interval_edit_textView_days2"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <TextView
-        android:id="@+id/interval_edit_textview_days2"
+        android:id="@+id/interval_edit_textView_days2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="END"
@@ -24,32 +33,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/button_update_interval"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp"
-        android:text="Update"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TimePicker
-        android:id="@+id/interval_edit_timepicker_begin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:timePickerMode="spinner"
-        app:layout_constraintBottom_toTopOf="@+id/interval_edit_textview_days2"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <TimePicker
         android:id="@+id/interval_edit_timepicker_end"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="20dp"
         android:timePickerMode="spinner"
-        app:layout_constraintBottom_toTopOf="@+id/button_update_interval"
+        app:layout_constraintBottom_toTopOf="@+id/interval_edit_button_update_interval"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/interval_edit_button_update_interval"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        android:text="UPDATE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,15 +18,14 @@ import com.george200150.fast_task.R;
 import com.george200150.fast_task.builders.DateFormatBuilder;
 import com.george200150.fast_task.constants.DateFormatStrings;
 import com.george200150.fast_task.domain.Task;
+import com.george200150.fast_task.formatters.DurationFormatter;
 import com.george200150.fast_task.fragments.tasks.TaskMetaEditFragment;
-
-import java.time.Duration;
 
 public class SubTaskListFragment extends Fragment {
     private SubTasksAdapter subTasksAdapter;
-    private RecyclerView subTaskView;
-    private Button editMetaButton;
-    private TextView textViewMetadata;
+    private RecyclerView subtaskListRecyclerView;
+    private Button subtaskListButtonEditMetadata;
+    private TextView subtaskListTextViewMetadata;
     // TODO: add viewModel
     public static Task selectedTask;
 
@@ -48,17 +47,17 @@ public class SubTaskListFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        subTaskView = view.findViewById(R.id.subtask_list);
-        editMetaButton = view.findViewById(R.id.button_edit_metadata);
-        textViewMetadata = view.findViewById(R.id.textView_metadata);
+        subtaskListRecyclerView = view.findViewById(R.id.subtask_list_recyclerView);
+        subtaskListButtonEditMetadata = view.findViewById(R.id.task_meta_edit_button_edit_location);
+        subtaskListTextViewMetadata = view.findViewById(R.id.subtask_list_textView_metadata);
 
-        textViewMetadata.setText("PRIORITY: " + selectedTask.getPriority() + "\n" +
+        subtaskListTextViewMetadata.setText("PRIORITY: " + selectedTask.getPriority() + "\n" +
                 "CREATED: " + DateFormatBuilder.getSDF(DateFormatStrings.displayDateFormat).format(selectedTask.getRegistered()) + "\n" +
                 "DEADLINE: " + DateFormatBuilder.getSDF(DateFormatStrings.displayDateFormat).format(selectedTask.getDeadline()) + "\n" +
-                "DURATION: " + formatDuration(selectedTask.getDuration()) + "\n" +
+                "DURATION: " + DurationFormatter.formatDuration(selectedTask.getDuration())+ "\n" +
                 "LOCATION: " + selectedTask.getLocation());
 
-        editMetaButton.setOnClickListener(new View.OnClickListener() {
+        subtaskListButtonEditMetadata.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 TaskMetaEditFragment.setTask(selectedTask);
@@ -71,19 +70,7 @@ public class SubTaskListFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         subTasksAdapter = new SubTasksAdapter(this, selectedTask);
-        subTaskView.setLayoutManager(new LinearLayoutManager(this.getContext())); // additional line
-        subTaskView.setAdapter(subTasksAdapter);
-    }
-
-    // TODO: put it in its right place
-    public static String formatDuration(Duration duration) {
-        long seconds = duration.getSeconds();
-        long absSeconds = Math.abs(seconds);
-        String positive = String.format(
-                "%d:%02d:%02d",
-                absSeconds / 3600,
-                (absSeconds % 3600) / 60,
-                absSeconds % 60);
-        return seconds < 0 ? "-" + positive : positive;
+        subtaskListRecyclerView.setLayoutManager(new LinearLayoutManager(this.getContext())); // additional line
+        subtaskListRecyclerView.setAdapter(subTasksAdapter);
     }
 }

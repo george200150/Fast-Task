@@ -13,7 +13,7 @@ import com.george200150.fast_task.domain.SubTask;
 
 public class SubTaskEditFragment extends Fragment {
     public static SubTask selectedSubTask;
-    private EditText edit_description_text;
+    private EditText subtaskEditEditTextDescription;
 
     public static void setSelectedSubTask(SubTask subTask) {
         selectedSubTask = subTask;
@@ -25,7 +25,7 @@ public class SubTaskEditFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
-        edit_description_text = view.findViewById(R.id.editText_subtask_description);
-        edit_description_text.setText(selectedSubTask.getDescription());
+        subtaskEditEditTextDescription = view.findViewById(R.id.subtask_edit_editText_description);
+        subtaskEditEditTextDescription.setText(selectedSubTask.getDescription());
     }
 }

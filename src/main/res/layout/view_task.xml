@@ -6,7 +6,7 @@
     android:layout_height="125dp">
 
     <CheckBox
-        android:id="@+id/done"
+        android:id="@+id/view_task_checkBox_done"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -16,19 +16,19 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/text_location"
+        android:id="@+id/view_task_textView_location"
         android:layout_width="200dp"
         android:layout_height="40dp"
         android:layout_margin="10dp"
         android:layout_marginTop="16dp"
         android:hint="@string/location"
         android:textAppearance="?attr/textAppearanceListItem"
-        app:layout_constraintEnd_toStartOf="@+id/button_delete_task"
-        app:layout_constraintStart_toEndOf="@+id/done"
+        app:layout_constraintEnd_toStartOf="@+id/view_task_button_delete_task"
+        app:layout_constraintStart_toEndOf="@+id/view_task_checkBox_done"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/text_deadline"
+        android:id="@+id/view_task_textView_deadline"
         android:layout_width="200dp"
         android:layout_height="40dp"
         android:layout_margin="10dp"
@@ -36,12 +36,12 @@
         android:hint="@string/deadline"
         android:textAppearance="?attr/textAppearanceListItem"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button_delete_task"
-        app:layout_constraintStart_toEndOf="@+id/done"
-        app:layout_constraintTop_toBottomOf="@id/text_location" />
+        app:layout_constraintEnd_toStartOf="@+id/view_task_button_delete_task"
+        app:layout_constraintStart_toEndOf="@+id/view_task_checkBox_done"
+        app:layout_constraintTop_toBottomOf="@id/view_task_textView_location" />
 
     <Button
-        android:id="@+id/button_delete_task"
+        android:id="@+id/view_task_button_delete_task"
         android:layout_width="68dp"
         android:layout_height="36dp"
         android:layout_marginEnd="28dp"

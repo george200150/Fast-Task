@@ -20,7 +20,7 @@ public class IntervalEditFragment extends Fragment {
     private static Interval selectedWorkingHours;
     private static WorkSchedule selectedWorkSchedule;
 
-    private Button buttonUpdateInterval;
+    private Button intervalEditButtonUpdateInterval;
     private TimePicker intervalEditTimepickerBegin;
     private TimePicker intervalEditTimepickerEnd;
     public IntervalEditFragment() {
@@ -41,13 +41,13 @@ public class IntervalEditFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
-        buttonUpdateInterval = view.findViewById(R.id.button_update_interval);
+        intervalEditButtonUpdateInterval = view.findViewById(R.id.interval_edit_button_update_interval);
         intervalEditTimepickerBegin = view.findViewById(R.id.interval_edit_timepicker_begin);
         intervalEditTimepickerEnd = view.findViewById(R.id.interval_edit_timepicker_end);
 
         // TODO: set the workingHours values to the timePicker (selectedWorkingHours)
 
-        buttonUpdateInterval.setOnClickListener(new View.OnClickListener() {
+        intervalEditButtonUpdateInterval.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String begin = TimeFormatter.formatHourMinute(intervalEditTimepickerBegin.getHour(), intervalEditTimepickerBegin.getMinute());
@@ -59,9 +59,3 @@ public class IntervalEditFragment extends Fragment {
         });
     }
 }
-
-// TODO: per whole project:
-//  1. rename all buttons so they meet the format: file_name_without_fragment_spelled_explicitely_dataTypeCamelCase_purpose_or_name (i.e. interval_edit_editText_type, task_list_button_save_modifications)
-//  2. use the xml elements in the same order as they appear in the graphic interface
-//  3. rename all the java objects that represent the buttons from snake_case to camelCase (easy with shift-F6 autocomplete)
-//  4. optimize imports for each java module (intelliJ autosuggests this) and keep the imports clean

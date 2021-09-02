@@ -6,7 +6,7 @@
     android:layout_height="75dp">
 
     <CheckBox
-        android:id="@+id/done_subtask"
+        android:id="@+id/view_subtask_checkBox_done"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -16,19 +16,19 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/text_description"
+        android:id="@+id/view_subtask_textView_description"
         android:layout_width="200dp"
         android:layout_height="40dp"
         android:layout_margin="10dp"
         android:hint="@string/description"
         android:textAppearance="?attr/textAppearanceListItem"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button_delete_subtask"
-        app:layout_constraintStart_toEndOf="@+id/done_subtask"
+        app:layout_constraintEnd_toStartOf="@+id/view_subtask_button_delete_subtask"
+        app:layout_constraintStart_toEndOf="@+id/view_subtask_checkBox_done"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button_delete_subtask"
+        android:id="@+id/view_subtask_button_delete_subtask"
         android:layout_width="68dp"
         android:layout_height="36dp"
         android:layout_marginEnd="28dp"

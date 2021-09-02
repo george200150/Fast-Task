@@ -58,7 +58,7 @@ public class SubTasksAdapter extends RecyclerView.Adapter<SubTasksAdapter.ViewHo
         private TextView description;
         public ViewHolder(@NonNull View subTaskView) {
             super(subTaskView);
-            description = subTaskView.findViewById(R.id.text_description);
+            description = subTaskView.findViewById(R.id.view_subtask_textView_description);
         }
     }
 }

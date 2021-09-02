@@ -7,11 +7,11 @@
     tools:context=".fragments.subtasks.SubTaskEditFragment">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/subtask_edit_textView_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Subtask Description"
-        app:layout_constraintBottom_toTopOf="@+id/editText_subtask_description"
+        app:layout_constraintBottom_toTopOf="@+id/subtask_edit_editText_description"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.136"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,13 +19,13 @@
         app:layout_constraintVertical_bias="0.848" />
 
     <EditText
-        android:id="@+id/editText_subtask_description"
+        android:id="@+id/subtask_edit_editText_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Description"
-        app:layout_constraintBottom_toTopOf="@+id/button_subtask_edit_save"
+        app:layout_constraintBottom_toTopOf="@+id/subtask_edit_button_update_description"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.194"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,11 +34,11 @@
         android:autofillHints="3 car of police" />
 
     <Button
-        android:id="@+id/button_subtask_edit_save"
+        android:id="@+id/subtask_edit_button_update_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="80dp"
-        android:text="Save"
+        android:text="UPDATE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

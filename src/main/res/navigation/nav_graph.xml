@@ -22,11 +22,6 @@
             app:destination="@id/fragment_subtask_list"
             app:popUpTo="@id/fragment_task_list"
             app:popUpToInclusive="true"/>
-        <action
-            android:id="@+id/action_TaskListFragment_to_TaskMetaEditFragment"
-            app:destination="@id/fragment_task_meta_edit"
-            app:popUpTo="@id/fragment_task_list"
-            app:popUpToInclusive="true"/>
     </fragment>
 
     <fragment
@@ -45,6 +40,11 @@
             app:destination="@id/fragment_task_list"
             app:popUpTo="@id/fragment_subtask_list"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_SubTaskListFragment_to_TaskMetaEditFragment"
+            app:destination="@id/fragment_task_meta_edit"
+            app:popUpTo="@id/fragment_subtask_edit"
+            app:popUpToInclusive="true"/>
     </fragment>
 
 

@@ -1,7 +1,6 @@
 package com.george200150.fast_task.fragments;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -12,8 +11,8 @@ import androidx.navigation.Navigation;
 import com.george200150.fast_task.R;
 
 public class MainFragment extends Fragment {
-    private Button buttonViewTasks;
-    private Button buttonAddTask;
+    private Button mainButtonViewTasks;
+    private Button mainButtonAddTask;
 
     public MainFragment() {
         super(R.layout.fragment_main);
@@ -21,11 +20,10 @@ public class MainFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
-        buttonViewTasks = (Button) view.findViewById(R.id.button_view_tasks);
-        buttonAddTask = (Button) view.findViewById(R.id.button_add_task);
+        mainButtonViewTasks = (Button) view.findViewById(R.id.main_button_view_tasks);
+        mainButtonAddTask = (Button) view.findViewById(R.id.main_button_add_task);
 
-        buttonViewTasks.setOnClickListener(x -> {
-            Log.d("YOUR TAG", "George!");
+        mainButtonViewTasks.setOnClickListener(x -> {
             Navigation.findNavController(view).navigate(R.id.fragment_task_list);
         });
     }

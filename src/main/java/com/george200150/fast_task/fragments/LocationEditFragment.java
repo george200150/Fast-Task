@@ -19,14 +19,14 @@ import com.george200150.fast_task.fragments.intervals.IntervalEditFragment;
 
 public class LocationEditFragment extends Fragment {
     public static Location selectedLocation;
-    private EditText editLocationName;
-    private EditText editLocationType;
-    private EditText editLocationCoordintates;
+    private EditText locationEditEditTextName;
+    private EditText locationEditEditTextType;
+    private EditText locationEditEditTextCoordinates;
     private Button locationEditButtonWeekdaysInterval;
     private Button locationEditButtonSaturdayInterval;
     private Button locationEditButtonSundayInterval;
-    private Button buttonNewLocation;
-    private Button buttonUpdateLocation;
+    private Button locationEditButtonNewLocation;
+    private Button locationEditButtonUpdateLocation;
 
     public static void setSelectedLocation(Location location) {selectedLocation = location; }
 
@@ -45,26 +45,26 @@ public class LocationEditFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
-        editLocationName = view.findViewById(R.id.location_edit_editText_name);
-        editLocationType = view.findViewById(R.id.location_edit_editText_type);
-        editLocationCoordintates = view.findViewById((R.id.location_edit_editText_coordinates));
+        locationEditEditTextName = view.findViewById(R.id.location_edit_editText_name);
+        locationEditEditTextType = view.findViewById(R.id.location_edit_editText_type);
+        locationEditEditTextCoordinates = view.findViewById((R.id.location_edit_editText_coordinates));
 
-        editLocationName.setText(selectedLocation.getName());
-        editLocationType.setText(selectedLocation.getType());
-        editLocationCoordintates.setText(selectedLocation.getCoordinates());
+        locationEditEditTextName.setText(selectedLocation.getName());
+        locationEditEditTextType.setText(selectedLocation.getType());
+        locationEditEditTextCoordinates.setText(selectedLocation.getCoordinates());
 
         locationEditButtonSundayInterval = view.findViewById(R.id.location_edit_button_sunday_interval);
         locationEditButtonSaturdayInterval = view.findViewById(R.id.location_edit_button_saturday_interval);
         locationEditButtonWeekdaysInterval = view.findViewById(R.id.location_edit_button_weekdays_interval);
 
-        buttonNewLocation = view.findViewById(R.id.button_new_location);
-        buttonUpdateLocation = view.findViewById(R.id.button_update_location);
+        locationEditButtonNewLocation = view.findViewById(R.id.location_edit_button_new_location);
+        locationEditButtonUpdateLocation = view.findViewById(R.id.location_edit_button_update_location);
 
-        buttonNewLocation.setOnClickListener(new View.OnClickListener() {
+        locationEditButtonNewLocation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String name = editLocationName.getText().toString();
-                String type = editLocationType.getText().toString();
+                String name = locationEditEditTextName.getText().toString();
+                String type = locationEditEditTextType.getText().toString();
 
 
 
@@ -72,7 +72,7 @@ public class LocationEditFragment extends Fragment {
             }
         });
 
-        buttonUpdateLocation.setOnClickListener(new View.OnClickListener() {
+        locationEditButtonUpdateLocation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // TODO: update location in database
